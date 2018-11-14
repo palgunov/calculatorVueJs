@@ -26,6 +26,12 @@
                     res:"",
                     numA:"",
                     numB:""
+                },
+                methods:{
+                    addition:function (){this.res= this.numA*1+ this.numB*1},
+                    subtraction:function(){this.res= this.numA - this.numB},
+                    multiplication:function(){this.res= this.numA * this.numB},
+                    division:function () {this.res= this.numA / this.numB}
                 }
             })
         });
@@ -35,10 +41,10 @@
 <body>
 <div id="calculator">
     <input v-model="numA" type="text">
-    <button @click="res=numA*1+numB*1" >+</button>
-    <button @click="res=numA-numB">-</button>
-    <button @click="res=numA*numB" >*</button>
-    <button @click="res=numA/numB">/</button>
+    <button @click="addition()">+</button>
+    <button @click="subtraction()">-</button>
+    <button @click="multiplication()" >*</button>
+    <button @click="division()">/</button>
     <input v-model="numB" type="text">
     <div v-if="showAnswer">{{res}}</div>
 </div>
